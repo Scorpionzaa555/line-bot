@@ -46,11 +46,11 @@ app.post('/webhook', (req, res) => {
 
   if (text === '1' || text === 'เปิด' || text === 'relay1_on') {
     // LED On
-    ledOn(sender, text)
+    ledOff(sender, text)
   }
   else if (text === '0' || text === 'ปิด' || text === 'relay1_off') {
     // LED Off
-    ledOff(sender, text)
+    ledOn(sender, text)
   }
   else {
     // Other
