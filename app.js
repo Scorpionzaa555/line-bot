@@ -140,7 +140,7 @@ function ledOn (sender, text) {
     messages: [
       {
         type: 'text',
-        text: 'เปิดประตูแล้วครับ'
+        text: 'เปิดไฟแล้วครับ'
       }
     ]
   }
@@ -186,7 +186,7 @@ function ledOff (sender, text) {
     messages: [
       {
         type: 'text',
-        text: 'ปิดประตูแล้วครับ'
+        text: 'ปิดไฟแล้วครับ'
       }
     ]
   }
