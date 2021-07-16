@@ -46,11 +46,11 @@ app.post('/webhook', (req, res) => {
 
   if (text === '1' || text === 'เปิด' || text === 'relay1_on') {
     // LED On
-    ledOff(sender, text)
+    ledOn(sender, text)
   }
   else if (text === '0' || text === 'ปิด' || text === 'relay1_off') {
     // LED Off
-    ledOn(sender, text)
+    ledOff(sender, text)
   }
   else {
     // Other
@@ -113,7 +113,7 @@ function inFo (sender, text) {
 }
 
 
-function ledOn (sender, text) {
+function ledOff (sender, text) {
   var client = mqtt.connect(mqtt_host, options);
   client.on('connect', function() { // When connected
       console.log('MQTT connected');
@@ -140,7 +140,7 @@ function ledOn (sender, text) {
     messages: [
       {
         type: 'text',
-        text: 'เปิดไฟแล้วครับ'
+        text: 'ปิดไฟแล้วครับ'
       }
     ]
   }
@@ -160,7 +160,7 @@ function ledOn (sender, text) {
   })
 }
 
-function ledOff (sender, text) {
+function ledOn (sender, text) {
   var client = mqtt.connect(mqtt_host, options);
   client.on('connect', function() { // When connected
       console.log('MQTT connected');
@@ -186,7 +186,7 @@ function ledOff (sender, text) {
     messages: [
       {
         type: 'text',
-        text: 'ปิดไฟแล้วครับ'
+        text: 'เปิดไฟแล้วครับ'
       }
     ]
   }
